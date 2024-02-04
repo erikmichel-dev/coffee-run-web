@@ -1,0 +1,60 @@
+name: Deployment Pipeline
+
+on:
+  push: 
+    branches:
+      - prod
+      - dev
+
+permissions:
+  id-token: write
+  contents: read
+  pull-requests: write
+  
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials from AWS account
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE }}
+          aws-region: ${{ secrets.AWS_REGION }}
+          role-session-name: GitHub-OIDC-ANGULAR
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund --no-optional
+
+      - name: Build - Develop
+        if: github.ref == 'refs/heads/dev'
+        run: npm run build
+
+      - name: Deploy - Develop
+        if: github.ref == 'refs/heads/dev'
+        run: aws s3 sync ./dist/coffee-run-web/ s3://${{ secrets.AWS_BUCKET_NAME_DEV }}
+
+      - name: Invalidate cache - Develop
+        if: github.ref == 'refs/heads/dev'
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_ID_DEV }} --paths "/*"
+
+      - name: Build - Production
+        if: github.ref == 'refs/heads/prod'
+        run: npm run build:prod
+
+      - name: Deploy - Production
+        if: github.ref == 'refs/heads/prod'
+        run: aws s3 sync ./dist/coffee-run-web/ s3://${{ secrets.AWS_BUCKET_NAME_PROD }}
+
+      - name: Invalidate cache - Production
+        if: github.ref == 'refs/heads/prod'
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_ID_PROD }} --paths "/*"
+
+  

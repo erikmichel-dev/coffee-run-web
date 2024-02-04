@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="left-col">
+  </div>
+  <div class="coffee-card">
+    <app-coffee-card *ngIf="brewedCoffee$ | async"
+      [brewedCoffee]="brewedCoffee$ | async"></app-coffee-card>
+  </div>
+  <div class="right-col">
+  </div>
+</div>
+<div id="button-container">
+  <button class="button" (click)="getCoffee()">BREW COFFEE</button>
+</div>

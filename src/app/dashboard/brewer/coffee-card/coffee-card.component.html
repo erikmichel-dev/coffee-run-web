@@ -1,0 +1,20 @@
+<div class="card-border" *ngIf="brewedCoffee">
+    <div class="card-header">
+        <span class="card-category">{{ brewedCoffee.tier }}</span>
+        <span class="card-cost">{{ brewedCoffee.cost }}</span>
+        <img class="coffee-beans" src="../../../../assets/images/coffee-beans.png" alt="">
+    </div>
+    <div class="card-image">
+        <img *ngIf="brewedCoffee.tier == 'Common'" src="../../../../assets/images/coffee_tiers/coffee_common.png" alt="">
+        <img *ngIf="brewedCoffee.tier == 'Uncommon'" src="../../../../assets/images/coffee_tiers/coffee_uncommon.png" alt="">
+        <img *ngIf="brewedCoffee.tier == 'Rare'" src="../../../../assets/images/coffee_tiers/coffee_rare.png" alt="">
+        <img *ngIf="brewedCoffee.tier == 'Epic'" src="../../../../assets/images/coffee_tiers/coffee_epic.png" alt="">
+        <img *ngIf="brewedCoffee.tier == 'Legendary'" src="../../../../assets/images/coffee_tiers/coffee_legendary.png" alt="">
+    </div>
+    <div class="card-title">
+        <div>{{ brewedCoffee.name }}</div>
+        <hr class="card-title-line">
+    </div>
+    <div class="card-description">{{ brewedCoffee.description }}</div>
+    <div class="card-footer">- {{ brewedCoffee.origin }} -</div>
+</div>

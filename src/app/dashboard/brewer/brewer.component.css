@@ -1,0 +1,42 @@
+.container {
+  justify-content: center;
+  margin: auto;
+  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+#button-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.buttons {
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.button {
+  height: 40px;
+  width: 140px;
+  font-family: 'Oswald', 'Space Mono', 'Space Grotesk', sans-serif;
+  font-size: x-large;
+  color: white;
+  background-color: #3e32349d;
+  border: none;
+}
+
+.coffee-card {
+  margin: auto;
+  margin-top: 30px;
+}
+
+.coffee-image {
+  margin-top: 40px;
+  height: 300px;
+  width: auto;
+}

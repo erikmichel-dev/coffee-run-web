@@ -1,0 +1,13 @@
+.container {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 60px 55% auto;
+}
+
+.brewer {
+  background-color: #fffbf8;
+}
+.catalog {
+  background-color: #fffbf8;
+}
