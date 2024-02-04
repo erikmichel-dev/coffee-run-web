@@ -6,6 +6,11 @@ on:
       - prod
       - dev
       - feature/github_actions_deploy_pipeline
+
+permissions:
+  id-token: write
+  contents: read
+  pull-requests: write
   
 jobs:
   deploy:
