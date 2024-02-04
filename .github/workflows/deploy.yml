@@ -38,5 +38,5 @@ jobs:
         run: npm run build
 
       - name: Deploy
-        run: aws s3 sync .\dist\coffee-run-web\ s3://${{ secrets.AWS_BUCKET_NAME_DEV }}
+        run: aws s3 sync /dist/coffee-run-web/ s3://${{ secrets.AWS_BUCKET_NAME_DEV }}
       
