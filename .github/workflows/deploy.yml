@@ -1,0 +1,52 @@
+name: Deployment Pipeline
+
+on:
+  push: 
+    branches:
+      - prod
+      - dev
+
+permissions:
+  id-token: write
+  contents: read
+  pull-requests: write
+  
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials from AWS account
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE }}
+          aws-region: ${{ secrets.AWS_REGION }}
+          role-session-name: GitHub-OIDC-ANGULAR
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund --no-optional
+
+      - name: Develop build
+        if: github.ref == 'refs/heads/dev'
+        run: npm run build
+
+      - name: Develop deploy
+        if: github.ref == 'refs/heads/dev'
+        run: aws s3 sync ./dist/coffee-run-web/ s3://${{ secrets.AWS_BUCKET_NAME_DEV }}
+
+      - name: Production build
+        if: github.ref == 'refs/heads/prod'
+        run: npm run build:prod
+
+      - name: Production deploy
+        if: github.ref == 'refs/heads/prod'
+        run: aws s3 sync ./dist/coffee-run-web/ s3://${{ secrets.AWS_BUCKET_NAME_PROD }}
+
+  
