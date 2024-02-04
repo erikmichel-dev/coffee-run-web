@@ -14,6 +14,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Configure AWS credentials from AWS account
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE }}
+          aws-region: ${{ secrets.AWS_REGION }}
+          role-session-name: GitHub-OIDC-ANGULAR
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -24,4 +31,7 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Deploy
+        run: aws s3 sync .\dist\coffee-run-web\ s3://${{ secrets.AWS_BUCKET_NAME_DEV }}
       
