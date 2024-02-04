@@ -1,0 +1,102 @@
+* {
+  font-family:'Merriweather', sans-serif;
+}
+
+.card-border {
+  position: relative;
+  display: grid;
+  grid-template-rows: 30px 170px auto auto 40px;
+  width: 220px;
+  height: 360px;
+  background: #FCF7F0;
+  border-radius: 15px;
+  outline: 15px solid #0E0101;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card {
+  margin: auto;
+  position: absolute;
+  display: grid;
+  grid-template-rows: auto 1fr auto auto auto;
+  width: 220px;
+  height: 330px;
+  background: #fff;
+  border-radius: 20px;
+  border: 18px solid;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-items: center;
+  font-style: italic;
+  padding: 10px 0px 8px 8px;
+  color: #0E0101;
+}
+
+.card-category {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.card-cost {
+  font-size: 14px;
+  justify-self: end;
+  color: #0E0101;
+  font-weight: bold;
+}
+
+.coffee-beans {
+  padding: 0px 10px 0px 5px;
+  width: 18px;
+  height: 18px;
+}
+
+.card-image {
+  width: 170px;
+  height: 140px;
+  overflow: hidden;
+  margin: auto;
+  border: 3px solid #0E0101;
+  border-radius: 20px;
+  background-color: #D6B890;
+}
+
+.card-image img {
+  margin: auto;
+  display: block;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0px 10px;
+}
+
+.card-title-line {
+  border: 1px solid #0E0101;
+  margin: 7px 10px 0px 10px;
+}
+
+.card-description {
+  font-size: 12px;
+  text-align: left;
+  padding: 0px 20px;
+  grid-row: 4;
+}
+
+.card-footer {
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 10px;
+  background: #FCF7F0;
+  grid-row: 5;
+}
