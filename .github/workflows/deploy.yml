@@ -38,7 +38,7 @@ jobs:
         run: npm run build
 
       - name: Check directories
-        run: ls
+        run: tree
 
       - name: Deploy
         run: aws s3 sync /dist/coffee-run-web/ s3://${{ secrets.AWS_BUCKET_NAME_DEV }} --debug
