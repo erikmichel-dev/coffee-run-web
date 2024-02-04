@@ -33,20 +33,28 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund --no-optional
 
-      - name: Develop build
+      - name: Build - Develop
         if: github.ref == 'refs/heads/dev'
         run: npm run build
 
-      - name: Develop deploy
+      - name: Deploy - Develop
         if: github.ref == 'refs/heads/dev'
         run: aws s3 sync ./dist/coffee-run-web/ s3://${{ secrets.AWS_BUCKET_NAME_DEV }}
 
-      - name: Production build
+      - name: Invalidate cache - Develop
+        if: github.ref == 'refs/heads/dev'
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_ID_DEV }} --paths "/*"
+
+      - name: Build - Production
         if: github.ref == 'refs/heads/prod'
         run: npm run build:prod
 
-      - name: Production deploy
+      - name: Deploy - Production
         if: github.ref == 'refs/heads/prod'
         run: aws s3 sync ./dist/coffee-run-web/ s3://${{ secrets.AWS_BUCKET_NAME_PROD }}
+
+      - name: Invalidate cache - Production
+        if: github.ref == 'refs/heads/dev'
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_ID_PROD }} --paths "/*"
 
   
