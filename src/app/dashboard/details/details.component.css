@@ -1,0 +1,30 @@
+.container {
+  display: grid;
+  height: 100%;
+  align-content: center;
+  justify-content: center;
+}
+
+.description {
+  font-family: 'DM Sans';
+  font-size: 19px;
+
+  h1, h3 {
+    margin-bottom: 10px; /* Adjust as needed */
+  }
+
+  p {
+    margin-bottom: 20px; /* Adjust as needed */
+    line-height: 1.5;
+  }
+}
+
+.button {
+  height: 40px;
+  width: 140px;
+  font-family: 'Oswald', 'Space Mono', 'Space Grotesk', sans-serif;
+  font-size: x-large;
+  color: white;
+  background-color: #3e32349d;
+  border: none;
+}
