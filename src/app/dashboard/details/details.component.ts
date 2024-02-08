@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent {
+  
+  goToLinkedin() {
+    window.open('https://www.linkedin.com/in/erikmichel/', '_blank');
+  }
 
+  goToGithub() {
+    window.open('https://github.com/erikmichel-dev', '_blank');
+  }
 }

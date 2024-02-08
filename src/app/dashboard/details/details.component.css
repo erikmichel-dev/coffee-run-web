@@ -20,11 +20,45 @@
 }
 
 .button {
+  padding: 0px 15px;
   height: 40px;
-  width: 140px;
-  font-family: 'Oswald', 'Space Mono', 'Space Grotesk', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
   font-size: x-large;
   color: white;
-  background-color: #3e32349d;
   border: none;
+  border-radius: 2px;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+
+  &:active {
+    transform: translateY(1px);
+    transform: scale(0.96);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+
+  i {
+    padding-right: 10px;
+  }
+}
+
+#networks {
+  margin-bottom: 20px;
+}
+
+.linkedin {
+  background-color: #28a745;
+
+  &:hover {
+    background-color:  #40b748;
+  }
+}
+
+.github {
+  background-color: #0077B5;
+
+  &:hover {
+    background-color: #1C98D7;
+  }
 }
