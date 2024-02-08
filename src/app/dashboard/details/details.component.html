@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="description">
+    <div>
+      <h1>Welcome to the Coffee Card Brewer</h1>
+      <p>A straightforward web page featuring a single, unique feature: brew a random coffee card from a collection of one hundred different cards. Each card is ranked within five distinct tiers, showcasing multiple origins. Originally conceived as a card collector game, it has been streamlined to focus on learning new concepts and avoid repetitive tasks.</p>
+      
+      <h3>What was learned then?</h3>
+      <p>The primary objective of this project was to gain proficiency in Terraform and GitHub Actions. Leveraging AWS services, the project stores cards in DynamoDB.<br>
+      Brewer requests are handled through a REST API with API Gateway and managed by a Lambda function. Additionally, the Angular-based website is hosted on an S3 Bucket and accessed via a CloudFront distribution with Origin Access Control (OAC).<br>
+      Both the Angular and Terraform projects undergo automated building and deployment via GitHub Actions pipelines.</p>
+      
+      <h3>Want to know more?</h3>
+      <p>If you want to take a closer look, check out both projects on my GitHub page.<br>
+      And feel free to reach out on LinkedIn to say hello or share your thoughts!</p>
+    </div>
+  </div>
+  <div id="networks">
+    <button class="button github" (click)="goToGithub()"><i class="fab fa-linkedin"></i>GITHUB</button>
+    <button class="button linkedin" (click)="goToLinkedin()"><i class="fab fa-github"></i>LINKEDIN</button>
+  </div>
+</div>
