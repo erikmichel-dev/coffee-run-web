@@ -22,8 +22,7 @@
 .button {
   padding: 0px 15px;
   height: 40px;
-  font-family: 'Space Grotesk', sans-serif;
-  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: 'Oswald', 'Space Mono', 'Space Grotesk', sans-serif;
   font-size: x-large;
   color: white;
   border: none;
