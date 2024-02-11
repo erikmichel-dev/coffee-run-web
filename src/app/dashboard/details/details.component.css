@@ -1,8 +1,8 @@
 .container {
   display: grid;
-  height: 100%;
+  grid-template-rows: auto auto;
   align-content: center;
-  justify-content: center;
+  align-items: center;
 }
 
 .description {
@@ -46,15 +46,15 @@
   margin-bottom: 20px;
 }
 
-.linkedin {
-  background-color: #28a745;
+.github {
+  background-color: #3b3b3b;
 
   &:hover {
-    background-color:  #40b748;
+    background-color:  #6b6b6b;
   }
 }
 
-.github {
+.linkedin {
   background-color: #0077B5;
 
   &:hover {

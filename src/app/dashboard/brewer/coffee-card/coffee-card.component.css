@@ -3,36 +3,21 @@
 }
 
 .card-border {
-  position: relative;
   display: grid;
-  grid-template-rows: 30px 170px auto auto 40px;
+  grid-template-rows: 25px 170px auto auto 40px;
   width: 220px;
   height: 360px;
   background: #FCF7F0;
   border-radius: 15px;
   outline: 15px solid #0E0101;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 15px;
   overflow: hidden;
 }
 
-.card {
-  margin: auto;
-  position: absolute;
-  display: grid;
-  grid-template-rows: auto 1fr auto auto auto;
-  width: 220px;
-  height: 330px;
-  background: #fff;
-  border-radius: 20px;
-  border: 18px solid;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
 
 .card-header {
   display: grid;
   grid-template-columns: 1fr 1fr auto;
-  align-items: center;
   font-style: italic;
   padding: 10px 0px 8px 8px;
   color: #0E0101;
