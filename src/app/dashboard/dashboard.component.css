@@ -1,7 +1,7 @@
 .container {
   display: grid;
   min-height: 100vh;
-  grid-template-columns: 100px 3fr 5fr 100px;
+  grid-template-columns: 100px 3fr 5fr 200px;
   grid-template-rows: 40px auto 100px;
   grid-template-areas:
     "header header header header"
