@@ -1,34 +1,30 @@
 .container {
-  justify-content: center;
-  margin: auto;
-  width: 50%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+  grid-template-rows: 390px 45px;
+  align-content: center;
+  gap: 50px;
+  height: 100%;
+}
+ 
+.coffee-card {
+  display: grid;
+  align-content: end;
+  justify-content: center;
 }
 
-#button-container {
-  text-align: center;
-  margin-top: 50px;
-}
-
-.buttons {
-  margin: auto;
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+.brew-button {
+  display: grid;
+  justify-content: center;
 }
 
 .button {
   padding: 0px 15px;
-  height: 40px;
+  height: 45px;
   font-family: 'Oswald', 'Space Mono', 'Space Grotesk', sans-serif;
-  font-size: x-large;
+  font-size: 28px;
   color: white;
   border: none;
   border-radius: 2px;
-  margin-right: 20px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.1s;
   background-color: #763e2b;
@@ -42,15 +38,10 @@
   &:hover {
     background-color:  #ac593e;
   }
-}
 
-.coffee-card {
-  margin: auto;
-  margin-top: 30px;
-}
-
-.coffee-image {
-  margin-top: 40px;
-  height: 300px;
-  width: auto;
+  &:disabled {
+    background-color: #763e2b;
+    cursor: not-allowed;
+    opacity: 0.7;
+ }
 }
