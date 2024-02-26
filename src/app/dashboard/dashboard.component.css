@@ -1,13 +1,43 @@
 .container {
-  margin: 0;
-  height: 100vh;
   display: grid;
-  grid-template-rows: 60px 55% auto;
+  min-height: 100vh;
+  grid-template-columns: 100px 3fr 5fr 200px;
+  grid-template-rows: 40px auto 100px;
+  grid-template-areas:
+    "header header header header"
+    ". aside main ."
+    "footer footer footer footer"
 }
 
-.brewer {
-  background-color: #fffbf8;
+@media (width < 1220px) {
+  .container {
+    grid-template-columns: 80px 1fr 80px;
+    grid-template-rows: 40px auto auto 100px;
+    row-gap: 60px;
+    grid-template-areas:
+      "header header header"
+      ". aside ."
+      ". main ."
+      "footer footer footer"
+  }
 }
-.catalog {
-  background-color: #fffbf8;
+
+.container header {
+  grid-area: header;
+  background-color: #3E3234;
+}
+
+.container aside {
+  grid-area: aside;
+}
+
+.container main {
+  grid-area: main;
+  display: grid;
+  place-content: center;
+}
+
+.container footer {
+  grid-area: footer;
+  background-color: #3E3234;
 }

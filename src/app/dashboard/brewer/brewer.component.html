@@ -1,13 +1,16 @@
 <div class="container">
-  <div class="left-col">
-  </div>
   <div class="coffee-card">
-    <app-coffee-card *ngIf="brewedCoffee$ | async"
-      [brewedCoffee]="brewedCoffee$ | async"></app-coffee-card>
+    <app-coffee-card 
+      [isLoading]="isLoading$ | async"
+      [brewedCoffee]="brewedCoffee$ | async">
+    </app-coffee-card>
   </div>
-  <div class="right-col">
+  <div class="brew-button">
+    <button 
+      [disabled]="isLoading$ | async" 
+      class="button" 
+      (click)="getCoffeeCard()">
+      BREW COFFEE
+    </button>
   </div>
-</div>
-<div id="button-container">
-  <button class="button" (click)="getCoffee()">BREW COFFEE</button>
 </div>

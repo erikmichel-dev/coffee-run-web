@@ -1,0 +1,86 @@
+.container {
+  display: grid;
+  grid-template-rows: auto auto;
+  align-content: center;
+  align-items: center;
+}
+
+.description {
+  font-family: 'DM Sans';
+  font-size: 19px;
+
+  h1, h3 {
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+}
+
+.button {
+  padding: 0px 15px;
+  height: 40px;
+  font-family: 'Oswald', 'Space Mono', 'Space Grotesk', sans-serif;
+  font-size: x-large;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+
+  &:active {
+    transform: translateY(1px);
+    transform: scale(0.96);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+
+  i {
+    padding-right: 10px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.text1 {
+  animation: fadeIn 0.5s ease;
+}
+
+.text2 {
+  animation: fadeIn 1s ease;
+}
+
+.text3 {
+  animation: fadeIn 1.5s ease;
+}
+
+#networks {
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease;
+}
+
+.github {
+  background-color: #3b3b3b;
+
+  &:hover {
+    background-color:  #6b6b6b;
+  }
+}
+
+.linkedin {
+  background-color: #0077B5;
+
+  &:hover {
+    background-color: #1C98D7;
+  }
+}
+
