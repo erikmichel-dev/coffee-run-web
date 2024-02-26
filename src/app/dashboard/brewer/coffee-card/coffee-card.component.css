@@ -1,4 +1,17 @@
-* {
+.card-body {
+  animation: fadeInAnimation 0.5s ease-in-out;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.card-border * {
   font-family:'Merriweather', sans-serif;
 }
 
@@ -84,4 +97,43 @@
   padding: 10px;
   background: #FCF7F0;
   grid-row: 5;
+}
+
+.card-placeholder {
+  width: 250px;
+  height: 390px;
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  color: #3E3234;
+
+  p {
+    font-family: 'Kaushan Script';
+    font-size: 55px; 
+    font-weight: bold;
+  }
+}
+
+.loader {
+  width: fit-content;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 30px;
+  background:linear-gradient(90deg,#d6b890 50%,#0000 0) right/200% 100%;
+  animation: l21 2s infinite linear;
+}
+.loader::before {
+  content :"Brewing...";
+  color: #0000;
+  padding: 0 5px;
+  background: inherit;
+  background-image: linear-gradient(90deg,#fff 50%,#763e2b 0);
+  -webkit-background-clip:text;
+          background-clip:text;
+}
+
+@keyframes l21{
+  100%{background-position: left}
 }

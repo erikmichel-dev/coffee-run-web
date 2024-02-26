@@ -10,11 +10,11 @@
   font-size: 19px;
 
   h1, h3 {
-    margin-bottom: 10px; /* Adjust as needed */
+    margin-bottom: 10px;
   }
 
   p {
-    margin-bottom: 20px; /* Adjust as needed */
+    margin-bottom: 20px;
     line-height: 1.5;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChange, SimpleChanges } from '@angular/core';
 import { Coffee } from 'src/app/shared/models/coffee';
 
 @Component({
@@ -8,8 +8,5 @@ import { Coffee } from 'src/app/shared/models/coffee';
 })
 export class CoffeeCardComponent {
   @Input() public brewedCoffee: Coffee | null | undefined;
-
-  public test(): void {
-    console.log(this.brewedCoffee)
-  }
+  @Input() public isLoading: boolean | null = false;
 }
