@@ -1,5 +1,5 @@
 .card-body {
-  animation: fadeInAnimation 0.5s ease-in-out;
+  animation: fadeInAnimation 0.5s ease;
 }
 
 @keyframes fadeInAnimation {

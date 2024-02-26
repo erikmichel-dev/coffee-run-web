@@ -28,6 +28,7 @@
   cursor: pointer;
   transition: background-color 0.3s, transform 0.1s;
   background-color: #763e2b;
+  animation: fadeInAnimation 0.5s ease;
 
   &:active {
     transform: translateY(1px);
@@ -44,4 +45,13 @@
     cursor: not-allowed;
     opacity: 0.7;
  }
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

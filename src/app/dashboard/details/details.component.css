@@ -42,8 +42,30 @@
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.text1 {
+  animation: fadeIn 0.5s ease;
+}
+
+.text2 {
+  animation: fadeIn 1s ease;
+}
+
+.text3 {
+  animation: fadeIn 1.5s ease;
+}
+
 #networks {
   margin-bottom: 20px;
+  animation: fadeIn 1.5s ease;
 }
 
 .github {
@@ -61,3 +83,4 @@
     background-color: #1C98D7;
   }
 }
+
