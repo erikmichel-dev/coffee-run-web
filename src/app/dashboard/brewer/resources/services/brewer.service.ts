@@ -25,7 +25,7 @@ export class BrewerService {
     this.startLoading();
     
     this._backend.getItem('/daily-coffee')
-      .pipe(map(item => item as Coffee), tap(r => console.log(r)))
+      .pipe(map(item => item as Coffee))
       .subscribe(coffee => {
         this._brewedCoffee.next(coffee);
       });
