@@ -1,6 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
-
 body, h1, h2, h3, h4, h5, h6, p, div, span {
   margin: 0;
   padding: 0;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('fonts/Merriweather-Light.ttf') format('truetype');
+  font-weight: light;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('fonts/DMSans_18pt-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} 
+
+@font-face {
+  font-family: 'Oswald';
+  src: url('fonts/Oswald-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Kaushan Script';
+  src: url('fonts/KaushanScript-Regular.ttf') format('truetype');
 }
