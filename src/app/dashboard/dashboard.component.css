@@ -1,7 +1,7 @@
 .container {
   display: grid;
   min-height: 100vh;
-  grid-template-columns: 100px 3fr 5fr 200px;
+  grid-template-columns: 100px 3fr 5fr 170px;
   grid-template-rows: 40px auto 100px;
   grid-template-areas:
     "header header header header"
@@ -12,6 +12,19 @@
 @media (width < 1220px) {
   .container {
     grid-template-columns: 80px 1fr 80px;
+    grid-template-rows: 40px auto auto 100px;
+    row-gap: 60px;
+    grid-template-areas:
+      "header header header"
+      ". aside ."
+      ". main ."
+      "footer footer footer"
+  }
+}
+
+@media (width < 600px) {
+  .container {
+    grid-template-columns: 24px 1fr 24px;
     grid-template-rows: 40px auto auto 100px;
     row-gap: 60px;
     grid-template-areas:
