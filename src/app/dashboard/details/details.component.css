@@ -8,6 +8,7 @@
 .description {
   font-family: 'DM Sans';
   font-size: 19px;
+  color: var(--text-color);
 
   h1, h3 {
     margin-bottom: 10px;
@@ -32,15 +33,6 @@
 
   i {
     padding-right: 10px;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
 
@@ -79,10 +71,10 @@
 }
 
 .github {
-  background-color: #3b3b3b;
+  background-color: #5b5b5b;
 
   &:hover {
-    background-color:  #6b6b6b;
+    background-color:  #8b8b8b;
   }
 }
 

@@ -1,14 +1,5 @@
 .card-body {
-  animation: fadeInAnimation 0.5s ease;
-}
-
-@keyframes fadeInAnimation {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  animation: fadeIn 0.5s ease;
 }
 
 .card-border * {
@@ -107,7 +98,7 @@
   justify-content: center;
   align-content: center;
   text-align: center;
-  color: #3E3234;
+  color: var(--card-placeholder-color);
 
   p {
     font-family: 'Kaushan Script';
@@ -121,7 +112,7 @@
   font-weight: bold;
   font-family: monospace;
   font-size: 30px;
-  background:linear-gradient(90deg,#d6b890 50%,#0000 0) right/200% 100%;
+  background:linear-gradient(90deg,var(--loader-underline) 50%,#0000 0) right/200% 100%;
   animation: l21 2s infinite linear;
 }
 .loader::before {
@@ -129,7 +120,7 @@
   color: #0000;
   padding: 0 5px;
   background: inherit;
-  background-image: linear-gradient(90deg,#fff 50%,#763e2b 0);
+  background-image: linear-gradient(90deg,var(--loader-text-not-underlined) 50%,var(--loader-text-underlined) 0);
   -webkit-background-clip:text;
           background-clip:text;
 }

@@ -1,5 +1,15 @@
 <div class="container">
-  <header></header>
+  <header>
+    <div class="theme-switch">
+      <button class="theme-button" 
+        (click)="toggleDarkTheme()" 
+        (mouseover)="showText()" 
+        (mouseleave)="hideText()">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+        <span class="theme-text" [ngClass]="{ 'visible': isThemeTextVisible }">{{ themeButtonText }}</span>
+      </button>
+    </div>
+  </header>
   <aside>
     <app-brewer></app-brewer>
   </aside>

@@ -3,6 +3,30 @@ body, h1, h2, h3, h4, h5, h6, p, div, span {
   padding: 0;
 }
 
+body {
+  --background-color: #ffffff;
+  --secondary-background-color: #3E3234;
+  --text-color: #000000;
+  --card-placeholder-color: #3E3234;
+  --loader-text-not-underlined: #FCF7F0;
+  --loader-text-underlined: #763e2b;
+  --loader-underline: #d6b890;
+  --brewer-button: #763e2b;
+  --brewer-button-hover: #ac593e;
+}
+
+body.dark-theme {
+  --background-color: #2c2020;
+  --secondary-background-color: #0e0101;
+  --text-color: #FCF7F0;
+  --card-placeholder-color: #FCF7F0;
+  --loader-text-not-underlined: #763e2b;
+  --loader-text-underlined: #FCF7F0;
+  --loader-underline: #d6b890;
+  --brewer-button: #834530;
+  --brewer-button-hover: #b65e42;
+}
+
 @font-face {
   font-family: 'Merriweather';
   src: url('fonts/Merriweather-Light.ttf') format('truetype');
@@ -24,4 +48,13 @@ body, h1, h2, h3, h4, h5, h6, p, div, span {
 @font-face {
   font-family: 'Kaushan Script';
   src: url('fonts/KaushanScript-Regular.ttf') format('truetype');
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
