@@ -16,7 +16,7 @@ body {
 }
 
 body.dark-theme {
-  --background-color: #2c2020;
+  --background-color: #392929;
   --secondary-background-color: #0e0101;
   --text-color: #FCF7F0;
   --card-placeholder-color: #FCF7F0;
