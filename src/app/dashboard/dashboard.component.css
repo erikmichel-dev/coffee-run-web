@@ -1,30 +1,50 @@
 .container {
   display: grid;
   min-height: 100vh;
-  grid-template-columns: 100px 3fr 5fr 200px;
-  grid-template-rows: 40px auto 100px;
+  background-color: var(--background-color);
+  grid-template-columns: 100px 3fr 5fr 170px;
+  grid-template-rows: 45px auto 100px;
   grid-template-areas:
     "header header header header"
     ". aside main ."
     "footer footer footer footer"
 }
 
-@media (width < 1220px) {
-  .container {
-    grid-template-columns: 80px 1fr 80px;
-    grid-template-rows: 40px auto auto 100px;
-    row-gap: 60px;
-    grid-template-areas:
-      "header header header"
-      ". aside ."
-      ". main ."
-      "footer footer footer"
-  }
-}
-
 .container header {
   grid-area: header;
-  background-color: #3E3234;
+  background-color: var(--secondary-background-color);
+  display: grid;
+  grid-template-columns: 100px 3fr 5fr 170px;
+
+  .theme-switch { 
+    grid-column: 3;
+    display: grid;
+    justify-content: end;
+  }
+
+  .theme-button {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #FCF7F0;
+  }
+
+  .theme-text {
+    position: absolute;
+    font-family: 'Kaushan Script';
+    bottom: 12%;
+    display: none;
+    color: #FCF7F0;
+    background-color: transparent;
+    animation: fadeIn 0.5s ease;
+    right: 45px;
+  }
+  
+  .visible {
+    display: inline-block;
+  }
 }
 
 .container aside {
@@ -39,5 +59,49 @@
 
 .container footer {
   grid-area: footer;
-  background-color: #3E3234;
+  background-color: var(--secondary-background-color);
+}
+
+@media (width < 1220px) {
+  .container {
+    grid-template-columns: 80px 1fr 80px;
+    grid-template-rows: 45px auto auto 100px;
+    row-gap: 60px;
+    grid-template-areas:
+      "header header header"
+      ". aside ."
+      ". main ."
+      "footer footer footer"
+  }
+
+  .container header {
+    display: grid;
+    grid-template-columns: 80px 1fr 80px;
+
+    .theme-switch { 
+      grid-column: 2;
+    }
+  }
+}
+
+@media (width < 600px) {
+  .container {
+    grid-template-columns: 24px 1fr 24px;
+    grid-template-rows: 45px auto auto 100px;
+    row-gap: 60px;
+    grid-template-areas:
+      "header header header"
+      ". aside ."
+      ". main ."
+      "footer footer footer"
+  }
+
+  .container header {
+    display: grid;
+    grid-template-columns: 24px 2fr 1fr 24px;
+
+    .theme-switch { 
+      grid-column: 3;
+    }
+  }
 }

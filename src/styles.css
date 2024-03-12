@@ -1,6 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
-
 body, h1, h2, h3, h4, h5, h6, p, div, span {
   margin: 0;
   padding: 0;
+}
+
+body {
+  --background-color: #ffffff;
+  --secondary-background-color: #3E3234;
+  --text-color: #000000;
+  --card-placeholder-color: #3E3234;
+  --loader-text-not-underlined: #FCF7F0;
+  --loader-text-underlined: #763e2b;
+  --loader-underline: #d6b890;
+  --brewer-button: #763e2b;
+  --brewer-button-hover: #ac593e;
+}
+
+body.dark-theme {
+  --background-color: #392929;
+  --secondary-background-color: #0e0101;
+  --text-color: #FCF7F0;
+  --card-placeholder-color: #FCF7F0;
+  --loader-text-not-underlined: #763e2b;
+  --loader-text-underlined: #FCF7F0;
+  --loader-underline: #d6b890;
+  --brewer-button: #834530;
+  --brewer-button-hover: #b65e42;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('fonts/Merriweather-Light.ttf') format('truetype');
+  font-weight: light;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('fonts/DMSans_18pt-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} 
+
+@font-face {
+  font-family: 'Oswald';
+  src: url('fonts/Oswald-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Kaushan Script';
+  src: url('fonts/KaushanScript-Regular.ttf') format('truetype');
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

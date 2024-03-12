@@ -27,8 +27,13 @@
   border-radius: 2px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.1s;
-  background-color: #763e2b;
-  animation: fadeInAnimation 0.5s ease;
+  background-color: var(--brewer-button);
+  animation: fadeIn 0.5s ease;
+
+  i {
+    position: relative; 
+    bottom: 3px;
+  }
 
   &:active {
     transform: translateY(1px);
@@ -37,21 +42,12 @@
   }
 
   &:hover {
-    background-color:  #ac593e;
+    background-color: var(--brewer-button-hover);
   }
 
   &:disabled {
-    background-color: #763e2b;
+    background-color: var(--brewer-button);
     cursor: not-allowed;
     opacity: 0.7;
  }
-}
-
-@keyframes fadeInAnimation {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
