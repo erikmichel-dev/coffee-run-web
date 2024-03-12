@@ -8,6 +8,14 @@ The deployment of the web application is fully automated using GitHub Actions, p
 
 ## Release Versions
 
+### 0.3.0
+**Release Date:** 12/03/2024
+
+**Description:**
+- Minor UI adjustments
+- Added favicon
+- Added dark theme
+
 ### 0.2.1
 **Release Date:** 26/02/2024
 
