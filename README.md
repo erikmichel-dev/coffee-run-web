@@ -3,10 +3,18 @@
 ## Introduction
 This repository contains the web application for the terraform infrastructure project Coffee-run.
 
+Take a look at it in: https://coffeecard-brewer.dev
+
 ## CI/CD with GitHub Actions
 The deployment of the web application is fully automated using GitHub Actions, providing a seamless CI/CD pipeline. The project is deployed by uploading to an S3 bucket 
 
 ## Release Versions
+
+### 0.3.1
+**Release Date:** 17/03/2024
+
+**Description:**
+- Details texts adjusted.
 
 ### 0.3.0
 **Release Date:** 12/03/2024
