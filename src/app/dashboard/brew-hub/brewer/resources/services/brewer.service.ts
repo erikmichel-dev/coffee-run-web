@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BackendService } from '../../../../shared/services/backend.service';
-import { Coffee } from '../../../../shared/models/coffee';
+import { BackendService } from 'src/app/shared/services/backend.service';
+import { Coffee } from 'src/app/shared/models/coffee';
 import { BehaviorSubject, Observable, map, tap, combineLatest } from 'rxjs';
 
 @Injectable({

@@ -2,12 +2,12 @@
   display: grid;
   min-height: 100vh;
   background-color: var(--background-color);
-  grid-template-columns: 100px 3fr 5fr 170px;
+  grid-template-columns: 170px auto 170px;
   grid-template-rows: 45px auto 100px;
   grid-template-areas:
-    "header header header header"
-    ". aside main ."
-    "footer footer footer footer"
+    "header header header"
+    ". main ."
+    "footer footer footer"
 }
 
 .container header {
@@ -47,14 +47,15 @@
   }
 }
 
-.container aside {
-  grid-area: aside;
-}
 
 .container main {
   grid-area: main;
   display: grid;
   place-content: center;
+}
+
+.container aside {
+  grid-area: aside;
 }
 
 .container footer {
@@ -69,8 +70,8 @@
     row-gap: 60px;
     grid-template-areas:
       "header header header"
-      ". aside ."
       ". main ."
+      ". aside ."
       "footer footer footer"
   }
 
@@ -91,8 +92,8 @@
     row-gap: 60px;
     grid-template-areas:
       "header header header"
-      ". aside ."
       ". main ."
+      ". aside ."
       "footer footer footer"
   }
 
