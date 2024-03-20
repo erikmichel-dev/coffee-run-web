@@ -1,12 +1,14 @@
 .container {
   display: grid;
+  row-gap: 100px;
   min-height: 100vh;
   background-color: var(--background-color);
   grid-template-columns: 170px auto 170px;
-  grid-template-rows: 45px auto 100px;
+  grid-template-rows: 45px auto auto 100px;
   grid-template-areas:
     "header header header"
     ". main ."
+    ". aside ."
     "footer footer footer"
 }
 
@@ -67,11 +69,11 @@
   .container {
     grid-template-columns: 80px 1fr 80px;
     grid-template-rows: 45px auto auto 100px;
-    row-gap: 60px;
+    row-gap: 100px;
     grid-template-areas:
       "header header header"
       ". main ."
-      ". aside ."
+      "aside aside aside"
       "footer footer footer"
   }
 
@@ -89,11 +91,11 @@
   .container {
     grid-template-columns: 24px 1fr 24px;
     grid-template-rows: 45px auto auto 100px;
-    row-gap: 60px;
+    row-gap: 100px;
     grid-template-areas:
       "header header header"
       ". main ."
-      ". aside ."
+      "aside aside aside"
       "footer footer footer"
   }
 

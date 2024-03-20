@@ -1,0 +1,63 @@
+.container {
+  h1 {
+    font-family: 'Kaushan Script';
+    font-size: xxx-large;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-color);
+  }
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 390px;
+  overflow: hidden;
+}
+
+.item{
+  position: absolute;
+  align-content: center;
+  transition:  0.5s;
+  left: calc(50% - 125px);
+}
+
+#next{
+  position: absolute;
+  right: 50px;
+  top: 40%;
+}
+#prev{
+  position: absolute;
+  left: 50px;
+  top: 40%;
+}
+#prev, #next{
+  color: var(--brewer-button-hover);
+  opacity: 0.7;
+  background: none;
+  border: none;
+  font-size: 100px;
+  font-family: monospace;
+  font-weight: bold;
+  z-index: 10;
+  font-family: 'DM Sans';
+  user-select: none;
+}
+
+#prev:hover,
+#next:hover{
+  opacity: 1;
+}
+
+@media (width < 1220px) {
+  #prev, #next{
+    font-size: 100px;
+  }
+}
+
+@media (width < 600px) {
+  #prev, #next{
+    font-size: 100px;
+  }
+}

@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Card Collection</h1>
+  <div class="slider">
+    <ng-container *ngFor="let coffeCard of testCoffeeList">
+      <div class="item" #card>
+        <app-coffee-card [brewedCoffee]="coffeCard">
+        </app-coffee-card>
+      </div>
+    </ng-container>
+    <button id="next" (click)="next()">></button>
+    <button id="prev" (click)="prev()"><</button>
+  </div>
+</div>

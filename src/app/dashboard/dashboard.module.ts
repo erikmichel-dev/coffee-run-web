@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import { BrewerComponent } from './brew-hub/brewer/brewer.component';
 import { DetailsComponent } from './brew-hub/details/details.component';
-import { CoffeeCardComponent } from './brew-hub/brewer/coffee-card/coffee-card.component';
+import { CoffeeCardComponent } from './shared/coffee-card/coffee-card.component';
 import { BrewHubComponent } from './brew-hub/brew-hub.component';
+import { DeckComponent } from './deck/deck.component';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { BrewHubComponent } from './brew-hub/brew-hub.component';
     BrewerComponent,
     DetailsComponent,
     CoffeeCardComponent,
-    BrewHubComponent
+    BrewHubComponent,
+    DeckComponent
   ],
   imports: [
     CommonModule
