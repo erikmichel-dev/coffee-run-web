@@ -3,7 +3,7 @@
     font-family: 'Kaushan Script';
     font-size: xxx-large;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     color: var(--text-color);
   }
 }
@@ -18,8 +18,16 @@
 .item{
   position: absolute;
   align-content: center;
-  transition:  0.5s;
+  transition:  0.4s;
   left: calc(50% - 125px);
+}
+
+app-coffee-card:hover {
+  .card-border {
+    transition:  0.2s;
+    outline: 15px solid var(--brewer-button);
+    color: var(--brewer-button)
+  }
 }
 
 #next{

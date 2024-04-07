@@ -1,6 +1,7 @@
-import { Component, ElementRef, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ElementRef, QueryList, Renderer2, ViewChildren } from '@angular/core';
 import { Coffee } from 'src/app/shared/models/coffee';
-import { CoffeeCardComponent } from '../shared/coffee-card/coffee-card.component';
+import { BrewerService } from 'src/app/shared/services/brewer.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-deck',
@@ -8,106 +9,64 @@ import { CoffeeCardComponent } from '../shared/coffee-card/coffee-card.component
   styleUrls: ['./deck.component.css']
 })
 export class DeckComponent {
-  @ViewChildren('card') deckCards!: QueryList<ElementRef>
-  public testCoffeeList: Coffee[] = [
-    {
-      "origin": "American",
-      "cost": 28,
-      "coffee_id": "15",
-      "tier": "Rare",
-      "description": "A zesty and crunchy coffee surprise.",
-      "name": "Lemon Poppy Seed Latte"
-    },
-    {
-      "origin": "Turkish",
-      "cost": 19,
-      "coffee_id": "23",
-      "tier": "Uncommon",
-      "description": "Spiced like a sultan's dream.",
-      "name": "Turkish Delight"
-    },
-    {
-      "origin": "American",
-      "cost": 8,
-      "coffee_id": "9",
-      "tier": "Common",
-      "description": "Coffee's chill, laid-back surfer cousin.",
-      "name": "Cold Brew"
-    },
-    {
-      "origin": "American Fusion",
-      "cost": 21,
-      "coffee_id": "4",
-      "tier": "Uncommon",
-      "description": "Cozy yet fancy rendezvous of chocolate and lavender.",
-      "name": "Lavender Mocha"
-    },
-    {
-      "origin": "American",
-      "cost": 10,
-      "coffee_id": "32",
-      "tier": "Common",
-      "description": "Sweet, snowy romance.",
-      "name": "White Chocolate Mocha"
-    },
-    {
-      "origin": "American",
-      "cost": 8,
-      "coffee_id": "25",
-      "tier": "Common",
-      "description": "Coffee's monochrome chic sophistication.",
-      "name": "Black and White Coffee"
-    }
-  ]
+  @ViewChildren('deckCards') deckCards!: QueryList<ElementRef>
+  public collectedCardDeck$: Observable<Coffee[]> | undefined;
+  public active = 0;
 
-  public active = 5;
+  constructor(
+    private renderer2: Renderer2,
+    private _brewerService: BrewerService) { }
 
-  constructor(private renderer2: Renderer2) { }
+  ngOnInit(): void {
+    this.collectedCardDeck$ = this._brewerService.collectedCardDeck$;
+  }
 
   ngAfterViewInit(): void {
+    this.deckCards.changes.subscribe(() => {
+      this.loadDeck()
+    })
     this.loadDeck()
   }
 
   loadDeck(): void {
     const cards = this.deckCards;
+    if (cards.length === 0) return;
     let featuredCard = cards.get(this.active)?.nativeElement;
     this.renderer2.setStyle(featuredCard, 'transform', 'none');
-    this.renderer2.setStyle(featuredCard, 'zIndex', '3');
+    this.renderer2.setStyle(featuredCard, 'zIndex', '4');
     this.renderer2.setStyle(featuredCard, 'filter', 'none');
     this.renderer2.setStyle(featuredCard, 'opacity', '1');
 
-    let stt = 0;
+    let pos = 0;
+    let displaceIncrement = 0.6;
+    let scaleIncrement = 1; 
     for (var i = this.active + 1; i < cards.length; i++) {
-      stt++;
-      this.renderer2.setStyle(cards.get(i)?.nativeElement, 'transform', `translateX(${160 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(-1deg)`);
-      this.renderer2.setStyle(cards.get(i)?.nativeElement, 'z-index', -stt + 3);
-      this.renderer2.setStyle(cards.get(i)?.nativeElement, 'filter', 'blur(2px)');
-      this.renderer2.setStyle(cards.get(i)?.nativeElement, 'opacity', stt > 2 ? 0 : 1);
+      pos++;
+      displaceIncrement = displaceIncrement + 0.08
+      scaleIncrement = scaleIncrement + 0.05 
+
+      this.renderer2.setStyle(cards.get(i)?.nativeElement, 'transform', `translateX(${100 * pos/displaceIncrement}px) scale(${1 - 0.2 * pos/scaleIncrement}) perspective(16px) rotateY(-1deg)`);
+      this.renderer2.setStyle(cards.get(i)?.nativeElement, 'z-index', -pos + 4);
+      this.renderer2.setStyle(cards.get(i)?.nativeElement, 'filter', `blur(${pos}px)`);
+      this.renderer2.setStyle(cards.get(i)?.nativeElement, 'opacity', pos > 4 ? 0 : 1);
     }
-    stt = 0;
+    pos = 0;
+    displaceIncrement = 0.6;
+    scaleIncrement = 1; 
     for (var i = (this.active - 1); i >= 0; i--) {
-      stt++;
-      this.renderer2.setStyle(cards.get(i)?.nativeElement, 'transform', `translateX(${-160 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(1deg)`);
-      this.renderer2.setStyle(cards.get(i)?.nativeElement, 'z-index', -stt + 3);
-      this.renderer2.setStyle(cards.get(i)?.nativeElement, 'filter', 'blur(2px)');
-      this.renderer2.setStyle(cards.get(i)?.nativeElement, 'opacity', stt > 2 ? 0 : 1);
+      pos++;
+      displaceIncrement = displaceIncrement + 0.08
+      scaleIncrement = scaleIncrement + 0.05 
+    
+      this.renderer2.setStyle(cards.get(i)?.nativeElement, 'transform', `translateX(${-100 * pos/displaceIncrement}px) scale(${1 - 0.2 * pos/scaleIncrement}) perspective(16px) rotateY(1deg)`);
+      this.renderer2.setStyle(cards.get(i)?.nativeElement, 'z-index', -pos + 4);
+      this.renderer2.setStyle(cards.get(i)?.nativeElement, 'filter', `blur(${pos}px)`);
+      this.renderer2.setStyle(cards.get(i)?.nativeElement, 'opacity', pos > 4 ? 0 : 1);
     }
   }
 
-  next(): void {
-    const cards = this.deckCards;
-    this.active = this.active + 1 < cards.length ? this.active + 1 : this.active;
+  selectCard(number: number): void {
+    this.active = number;
     this.loadDeck()
-  }
-
-  prev(): void {
-    this.active = this.active - 1 >= 0 ? this.active - 1 : this.active;
-    this.loadDeck()
-  }
-
-  test(): void {
-    const cards = this.deckCards;
-    // this.renderer2.setStyle(cards.get(5)?.nativeElement, 'zIndex',  -1000);
-    // this.renderer2.setStyle(cards.get(5)?.nativeElement, 'color',  'red');
   }
 }
