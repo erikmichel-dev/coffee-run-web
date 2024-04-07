@@ -1,6 +1,6 @@
 <div class="container">
-  <h1>Collected card deck</h1>
-  <div class="slider">
+  <h1>Brewed cards deck</h1>
+  <div *ngIf="(collectedCardDeck$ | async)?.length != 0 else  deckPlaceholder" class="slider">
     <ng-container *ngFor="let coffeCard of collectedCardDeck$ | async; let i = index">
       <div class="item" #deckCards>
         <app-coffee-card [brewedCoffee]="coffeCard" (click)="selectCard(i)">
@@ -8,4 +8,7 @@
       </div>
     </ng-container>
   </div>
+  <ng-template #deckPlaceholder>
+    <h2>~ No cards brewed ~</h2>
+  </ng-template>
 </div>

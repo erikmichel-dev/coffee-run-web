@@ -98,7 +98,7 @@
   justify-content: center;
   align-content: center;
   text-align: center;
-  color: var(--card-placeholder-color);
+  color: var(--secondary-text-color);
 
   p {
     font-family: 'Kaushan Script';
