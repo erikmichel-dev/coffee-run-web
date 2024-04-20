@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ThemeService } from '../shared/services/theme.service';
 import { ThemeText } from '../shared/enums/theme-text.enum';
+import { BrewerService } from '../shared/services/brewer.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +14,14 @@ export class DashboardComponent {
   public themeButtonText: string = ThemeText.light;
   public isThemeTextVisible: boolean = false;
 
-  constructor(private _themeService: ThemeService) {}
+  constructor(
+    private _themeService: ThemeService,
+    private _brewerService: BrewerService
+  ) {}
+
+  ngOnInit(): void {
+    this._brewerService.userDataInit();
+  }
 
   toggleDarkTheme(): void {
     this._themeService.toggleDarkTheme();
