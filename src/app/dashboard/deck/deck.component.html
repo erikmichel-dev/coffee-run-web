@@ -1,5 +1,13 @@
 <div class="container">
   <h1>Brewed cards deck</h1>
+  <div *ngIf="(collectedCardDeck$ | async)?.length != 0" class="filter">
+    <h3>Found: {{ (collectedCardDeck$ | async)?.length }}/100</h3>
+    <button
+      class="filter-btn"
+      (click)="orderDeckBy()">
+      {{ filterOptionsArray[filterOption] }}
+    </button>
+  </div>
   <div *ngIf="(collectedCardDeck$ | async)?.length != 0 else  deckPlaceholder" class="slider">
     <ng-container *ngFor="let coffeCard of collectedCardDeck$ | async; let i = index">
       <div class="item" #deckCards>
