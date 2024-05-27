@@ -19,14 +19,14 @@
 
 .button {
   padding: 0px 15px;
-  height: 45px;
-  font-family: 'Oswald', 'Space Mono', 'Space Grotesk', sans-serif;
-  font-size: 28px;
-  color: white;
-  border: none;
   border-radius: 2px;
-  cursor: pointer;
+  font-family: 'Oswald', 'Space Mono', 'Space Grotesk', sans-serif;
   transition: background-color 0.3s, transform 0.1s;
+  color: white;
+  cursor: pointer;
+  height: 45px;
+  font-size: 28px;
+  border: none;
   background-color: var(--brewer-button);
   animation: fadeIn 0.5s ease;
 

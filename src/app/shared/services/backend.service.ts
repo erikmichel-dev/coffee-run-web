@@ -8,7 +8,6 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class BackendService {
-  
   private _baseUrl: string = environment.apiEndpoint;
 
   constructor(
@@ -31,6 +30,6 @@ export class BackendService {
       return throwError('getItem: URI not set');
     }
 
-    return this._http.get<Coffee>(url, { headers: headers }).pipe(map(res => <T>res));
+    return this._http.get<T>(url, { headers: headers }).pipe(map(res => <T>res));
   }
 }

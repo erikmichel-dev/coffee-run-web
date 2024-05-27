@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { Observable, Subject, take, takeUntil, tap } from 'rxjs';
-import { BackendService } from 'src/app/shared/services/backend.service';
-import { BrewerService } from './resources/services/brewer.service';
+import { Observable, Subject, takeUntil } from 'rxjs';
+import { BrewerService } from 'src/app/shared/services/brewer.service';
 import { Coffee } from 'src/app/shared/models/coffee';
 
 

@@ -7,7 +7,7 @@ body {
   --background-color: #ffffff;
   --secondary-background-color: #3E3234;
   --text-color: #000000;
-  --card-placeholder-color: #3E3234;
+  --secondary-text-color: #504043;
   --loader-text-not-underlined: #FCF7F0;
   --loader-text-underlined: #763e2b;
   --loader-underline: #d6b890;
@@ -19,7 +19,7 @@ body.dark-theme {
   --background-color: #392929;
   --secondary-background-color: #0e0101;
   --text-color: #FCF7F0;
-  --card-placeholder-color: #FCF7F0;
+  --secondary-text-color: #ffe9ca;
   --loader-text-not-underlined: #763e2b;
   --loader-text-underlined: #FCF7F0;
   --loader-underline: #d6b890;
