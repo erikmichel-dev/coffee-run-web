@@ -1,50 +1,45 @@
-# Learning Project: Coffee-run Web application
 
-## Introduction
-This repository contains the web application for the terraform infrastructure project Coffee-run.
+<div align="center">
 
-Take a look at it in: https://coffeecard-brewer.dev
+# Coffee Card Brewer ☕️
+<br />
+Welcome to Coffee Card Brewer! Are you a coffee lover? Dive into the ultimate coffee challenge where you test your knowledge with AI-generated questions. 
 
-## CI/CD with GitHub Actions
-The deployment of the web application is fully automated using GitHub Actions, providing a seamless CI/CD pipeline. The project is deployed by uploading to an S3 bucket 
+Prove your expertise and collect all the coffee cards as rewards. Angular application backed by Terraform infrastructure on AWS
 
-## Release Versions
+https://coffeecard-brewer.dev/
 
-### 0.3.1
-**Release Date:** 17/03/2024
+![img1](https://github.com/erikmichel-dev/coffee-run-terraform/assets/87828771/e2fd50ad-24d1-456a-a34a-a9ed660d2543)
 
-**Description:**
-- Details texts adjusted.
-
-### 0.3.0
-**Release Date:** 12/03/2024
-
-**Description:**
-- Minor UI adjustments
-- Added favicon
-- Added dark theme
-
-### 0.2.1
-**Release Date:** 26/02/2024
-
-**Description:**
-- Further compressed images
+</div>
 
 
-### 0.2.0
-**Release Date:** 26/02/2024
+## Getting Started
 
-**Description:**
-- Added main details
-- UI Overhaul
-- Brewing refactored
+To get a local copy up and running follow these simple steps:
 
+1. Clone or fork this repository
 
-### 0.1.0
-**Release Date:** 04/02/2024
+   ```sh
+   git clone https://github.com/erikmichel-dev/coffee-run-web.git
+   ```
 
-**Description:**
-- Project initialization.
-- Added the 'Daily Coffee Request' feature.
+2. Install dependencies
 
----
+   ```bash
+   npm install
+   ```
+
+3. Run the project
+   ```bash
+   ng serve
+   ```
+
+4. For local backend, go to:
+https://github.com/erikmichel-dev/coffee-run-terraform
+
+### Prerequisites
+
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/)
+- [Angular CLI](https://angular.io/cli)

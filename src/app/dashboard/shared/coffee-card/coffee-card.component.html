@@ -1,4 +1,4 @@
-<div class="card-body" *ngIf="!isLoading else loader">
+<div #card class="card-body" *ngIf="!isLoading else loader">
     <div class="card-border" *ngIf="brewedCoffee else placeholderBlock">
         <div class="card-header">
             <span class="card-category">{{ brewedCoffee.tier }}</span>
