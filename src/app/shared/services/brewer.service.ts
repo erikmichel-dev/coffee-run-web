@@ -115,7 +115,7 @@ export class BrewerService {
     this.reset();
     this._isLoading.next(true);
 
-    this._backend.getItem<Coffee>('/daily-coffee')
+    this._backend.getItem<Coffee>('/coffee_card')
       .subscribe(coffee => {
         setTimeout(() => {
           if (!this.userData?.deck.find(card => card.name === coffee.name)) {
