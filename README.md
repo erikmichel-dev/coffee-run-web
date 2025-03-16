@@ -7,8 +7,6 @@ Welcome to Coffee Card Brewer! Are you a coffee lover? Dive into the ultimate co
 
 Prove your expertise and collect all the coffee cards as rewards. Angular application backed by Terraform infrastructure on AWS
 
-https://coffeecard-brewer.dev/
-
 ![img1](https://github.com/erikmichel-dev/coffee-run-terraform/assets/87828771/e2fd50ad-24d1-456a-a34a-a9ed660d2543)
 
 </div>
